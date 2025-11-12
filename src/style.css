@@ -3,11 +3,13 @@
     --width-logo: 1.5rem;
     --padding-nav-bar: 0.5rem 2rem;
     --padding-nav-link-div: 0.5rem 2rem;
-    --width-dropdown: clamp(150px, 180px, 210px);
+    --width-dropdown: clamp(100px, 150px, 180px);
     --padding-dropdown-menu: 1rem;
     --gap-dropdown-menu: 1rem;
-    --bg-nav-bar: hsl(208, 100%, 85%);
+    --bg-nav-bar: hsl(175, 18%, 64%);
     --border-radius-dropdown-menu: 0 0 0.5rem 0.5rem;
+    --font-weight-link: 700;
+    --bg-dropdown-menu: hsl(from var(--bg-nav-bar) h s l / 0.8);
 }
 *,
 *::before,
@@ -32,7 +34,7 @@ body {
     padding: var(--padding-nav-bar);
     align-items: center;
     justify-content: space-between;
-    background-color: var(--bg-nav-bar);
+    background-color: hsl(from var(--bg-nav-bar) h s l / 0.8);
 }
 .nav-link-div {
     display: flex;
@@ -43,11 +45,18 @@ body {
     background: none;
     font-family: inherit;
     font-size: inherit;
+    font-weight: var(--font-weight-link);
+    transition: scale 0.3s ease-in;
+    &:hover {
+        cursor: pointer;
+        scale: 1.1;
+    }
 }
 .dropdown {
     position: relative;
     width: var(--width-dropdown);
     padding: var(--padding-nav-link-div);
+    text-align: center;
 }
 .dropdown-menu {
     display: flex;
@@ -59,12 +68,26 @@ body {
     padding: var(--padding-dropdown-menu);
     gap: var(--gap-dropdown-menu);
     border-radius: var(--border-radius-dropdown-menu);
-    background-color: hsl(from var(--bg-nav-bar) h s l / 0.4);
+    background-color: hsl(from var(--bg-dropdown-menu) h s l / 0.4);
     backdrop-filter: blur(1rem);
     opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(-10px);
+    box-shadow: 3px 3px 4px 0px hsl(from var(--bg-dropdown-menu) h s l / 0.5);
 }
 .dropdown.active > .dropdown-menu {
     opacity: 1;
-    background-color: hsl(from var(--bg-nav-bar) h s l / 0.4);
-    backdrop-filter: blur(1rem);
+    transform: translateY(0px);
+}
+.menu-link-div {
+    display: grid;
+    gap: var(--gap-dropdown-menu);
+}
+.menu-link {
+    font-weight: var(--font-weight-link);
+    transition: scale 0.3s ease-in;
+    &:hover {
+        cursor: pointer;
+        scale: 1.1;
+    }
 }

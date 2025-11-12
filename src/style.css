@@ -1,93 +1,95 @@
 :root {
-    --font-family: 'Courier New', Courier, monospace;
-    --width-logo: 1.5rem;
-    --padding-nav-bar: 0.5rem 2rem;
-    --padding-nav-link-div: 0.5rem 2rem;
-    --width-dropdown: clamp(100px, 150px, 180px);
-    --padding-dropdown-menu: 1rem;
-    --gap-dropdown-menu: 1rem;
-    --bg-nav-bar: hsl(175, 18%, 64%);
-    --border-radius-dropdown-menu: 0 0 0.5rem 0.5rem;
-    --font-weight-link: 700;
-    --bg-dropdown-menu: hsl(from var(--bg-nav-bar) h s l / 0.8);
+	--font-family: "Courier New", Courier, monospace;
+	--width-logo: 1.5rem;
+	--padding-nav-bar: 0.5rem 2rem;
+	--padding-nav-link-div: 0.5rem 2rem;
+	--width-dropdown: clamp(100px, 150px, 180px);
+	--padding-dropdown-menu: 1rem;
+	--gap-dropdown-menu: 1rem;
+	--bg-nav-bar: hsl(175, 18%, 64%);
+	--border-radius-dropdown-menu: 0 0 0.5rem 0.5rem;
+	--font-weight-link: 700;
+	--bg-dropdown-menu: hsl(from var(--bg-nav-bar) h s l / 0.8);
 }
 *,
 *::before,
 *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    font-family: var(--font-family);
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	font-family: var(--font-family);
 }
 .logo-div img {
-    width: var(--width-logo);
+	width: var(--width-logo);
 }
 .nav-bar {
-    display: flex;
-    padding: var(--padding-nav-bar);
-    align-items: center;
-    justify-content: space-between;
-    background-color: hsl(from var(--bg-nav-bar) h s l / 0.8);
+	display: flex;
+	padding: var(--padding-nav-bar);
+	align-items: center;
+	justify-content: space-between;
+	background-color: hsl(from var(--bg-nav-bar) h s l / 0.8);
 }
 .nav-link-div {
-    display: flex;
-    gap: 3rem;
+	display: flex;
+	gap: 3rem;
 }
 .link {
-    border: none;
-    background: none;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: var(--font-weight-link);
-    transition: scale 0.3s ease-in;
-    &:hover {
-        cursor: pointer;
-        scale: 1.1;
-    }
+	border: none;
+	background: none;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: var(--font-weight-link);
+	transition: scale 0.3s ease-in;
+	&:hover {
+		cursor: pointer;
+		scale: 1.1;
+	}
 }
 .dropdown {
-    position: relative;
-    width: var(--width-dropdown);
-    padding: var(--padding-nav-link-div);
-    text-align: center;
+	position: relative;
+	width: var(--width-dropdown);
+	padding: var(--padding-nav-link-div);
+	text-align: center;
 }
 .dropdown-menu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 0;
-    top: calc(100% + 0.5rem);
-    width: inherit;
-    padding: var(--padding-dropdown-menu);
-    gap: var(--gap-dropdown-menu);
-    border-radius: var(--border-radius-dropdown-menu);
-    background-color: hsl(from var(--bg-dropdown-menu) h s l / 0.4);
-    backdrop-filter: blur(1rem);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    transform: translateY(-10px);
-    box-shadow: 3px 3px 4px 0px hsl(from var(--bg-dropdown-menu) h s l / 0.5);
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	left: 0;
+	top: calc(100% + 0.5rem);
+	width: inherit;
+	padding: var(--padding-dropdown-menu);
+	gap: var(--gap-dropdown-menu);
+	border-radius: var(--border-radius-dropdown-menu);
+	background-color: hsl(from var(--bg-dropdown-menu) h s l / 0.4);
+	backdrop-filter: blur(1rem);
+	opacity: 0;
+	transition:
+		transform 0.3s ease,
+		opacity 0.3s ease;
+	transform: translateY(-10px);
+	box-shadow: 3px 3px 4px 0px hsl(from var(--bg-dropdown-menu) h s l / 0.5);
 }
 .dropdown.active > .dropdown-menu {
-    opacity: 1;
-    transform: translateY(0px);
+	opacity: 1;
+	transform: translateY(0px);
 }
 .menu-link-div {
-    display: grid;
-    gap: var(--gap-dropdown-menu);
+	display: grid;
+	gap: var(--gap-dropdown-menu);
 }
 .menu-link {
-    font-weight: var(--font-weight-link);
-    transition: scale 0.3s ease-in;
-    &:hover {
-        cursor: pointer;
-        scale: 1.1;
-    }
+	font-weight: var(--font-weight-link);
+	transition: scale 0.3s ease-in;
+	&:hover {
+		cursor: pointer;
+		scale: 1.1;
+	}
 }

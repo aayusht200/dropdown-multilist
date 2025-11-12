@@ -1,15 +1,5 @@
 :root {
-    --logo-width: 3rem;
-    --bg-nav: hsl(0, 0%, 76%);
-    --padding-inline-nav: 5%;
-    --padding-block-nav: 0.5rem;
-    --sub-menu-bg: hsla(0, 0%, 0%, 0.2);
-    --padding: 1rem;
-    --gap-nav-item: 2rem;
-    --font-size-menu-header: 1.2rem;
-    --width-dropdown-menu: clamp(160px, 200px, 240px);
     --font-family: 'Courier New', Courier, monospace;
-    --padding-left-logo: 2rem;
 }
 
 *,
@@ -27,4 +17,3 @@ body {
     flex-direction: column;
     font-family: var(--font-family);
 }
-
